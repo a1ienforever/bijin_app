@@ -1,0 +1,7 @@
+django==4.2.16
+django-otp
+django-extensions
+django-autoslug
+pillow
+pyotp
+qrcode

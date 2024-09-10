@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load bijin_tags %}
+
+<div id="date_frame">
+    <form action="" method="POST" class="" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="id_1">C</label><input type="date" id="id_1" name="from_date">
+        <label for="id_2">по</label><input type="date" id="id_2" name="to_date">
+        <button type="submit" class="btn">Показать</button>
+        <button type="reset" class="btn">Сбросить</button>
+    </form>
+</div>
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>{{ name_th.0 }}</th>
+            <th>{{ name_th.1 }}</th>
+            <th>{{ name_th.2 }}</th>
+            <th>{{ name_th.3 }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for tr in products %}
+
+        <tr>
+            <td><a href="{% url 'card' tr.model.slug%}">{{ tr.model.num }}</a></td>
+            <td>{{ tr.model.name }}</td>
+            <td>{{ tr.quantity }}</td>
+            {% with result=tr.quantity|multiply:tr.model.price %}
+            <td>{{ result }}</td>
+            {% endwith %}
+        </tr>
+        {% endfor %}
+        <!-- Добавьте другие строки по необходимости -->
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,269 @@
+
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+div#main {
+    background-color: aquamarine;
+    border: 3px black solid;
+    border-radius: 8px;
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+    /*min-width: 320px;*/
+    /*max-height: 700px;*/
+    flex-direction: column;
+    justify-content: center;
+    /*width: 90%;*/
+    /*max-width: 1200px;*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    align-items: center;
+    /*min-height: 60vh; !* Устанавливаем минимальную высоту *!*/
+}
+
+h1 {
+    margin-top: 0;
+
+    color: #333;
+}
+
+p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+/*@media (max-width: 600px) {*/
+/*    div#main {*/
+/*        width: 95%;*/
+/*        padding: 15px;*/
+/*    }*/
+
+/*    h1 {*/
+/*        font-size: 1.5em;*/
+/*    }*/
+
+/*    p {*/
+/*        font-size: 0.9em;*/
+/*    }*/
+/*}*/
+
+
+/*!* Media Queries для устройств с планшетами *!*/
+/*@media (max-width: 900px) and (min-width: 601px) {*/
+/*    div#main {*/
+/*        width: 90%;*/
+/*        padding: 20px;*/
+/*    }*/
+
+/*    h1 {*/
+/*        font-size: 1.75em;*/
+/*    }*/
+
+/*    p {*/
+/*        font-size: 1em;*/
+/*    }*/
+/*}*/
+
+
+#date_frame {
+    /*margin: 5px;*/
+    border: 2px black solid;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+
+.table {
+    width: 100%; /* Растягиваем таблицу на всю ширину блока */
+    border-collapse: collapse; /* Объединяем границы ячеек */
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.table th, .table td {
+    padding: 8px; /* Отступы внутри ячеек */
+    border-bottom: black 1px solid;
+    text-align: center; /* Выравнивание текста по левому краю */
+    box-sizing: border-box;
+
+}
+
+#button-block {
+    width: 100%;
+    height: auto;
+    border: 2px black solid;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    background-color: #f2f2f2;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+}
+
+
+
+.btn {
+    flex: 1 1 auto; /* Позволяет кнопкам растягиваться и сжиматься в зависимости от доступного пространства */
+    font-size: 8px;
+    margin: 0; /* Убираем внешние отступы, чтобы контролировать отступы через контейнер */
+    padding: 10px; /* Отступы внутри кнопки */
+    text-align: center; /* Выравнивание текста по центру */
+    background-color: #007bff; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем границы */
+    border-radius: 5px; /* Закругляем углы */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
+    text-decoration: none; /* Исправление 'None' на 'none' */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Цвет фона при наведении */
+}
+
+
+.btn-menu{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: #007bff; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем границы */
+    border-radius: 5px; /* Закругляем углы */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
+    text-decoration: None;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.container {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+
+.header {
+    display: flex;
+    width: 100%;
+    /* height: 50px; */
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.btn-menu {
+    position: absolute;
+    left: -100px;
+}
+
+img {max-width: 600px; height: auto;}
+
+img.img-article-left {
+	max-width: 200px;
+	height: auto;
+	float: left;
+	padding: 10px;
+}
+
+img.img-article-left.thumb {
+	max-width: 150px;
+	height: auto;
+}
+
+.title {
+    flex-grow: 1;
+    text-align: center;
+    margin-left: 50px; /* Отступ для предотвращения перекрытия */
+}
+
+.title h1 {
+    margin: 0;
+}
+
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.form p {
+    margin-bottom: 10px;
+}
+
+.form label {
+    font-weight: bold;
+    margin: 5px;
+}
+
+label {
+    margin: 5px;
+}
+
+.form input, .form select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+
+
+
+

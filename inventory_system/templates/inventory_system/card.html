@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>{{card.name}} - {{card.num}}</h1>
+    <img src="{{card.photo.url}}" alt="Нет фото">
+    <h2>Модель: {{card.num}}</h2>
+    <h2>Название: {{card.name}}</h2>
+    <h2 class="price">Цена: {{card.price}}</h2>
+    <p>{{card.note}}</p>
+</div>
+
+
+
+
+{% endblock %}

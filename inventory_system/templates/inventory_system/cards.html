@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="cards">
+    {% for card in cards%}
+    <div class="card">
+        <!-- Верхняя часть -->
+        <div class="card__top">
+            <!-- Изображение-ссылка товара -->
+            <a href="{% url 'card' card.slug %}" class="card__image">
+                <img
+                        src="{{card.photo.url}}"
+                        alt="Нет фото товара"
+                />
+            </a>
+
+        </div>
+        <!-- Нижняя часть -->
+        <div class="card__bottom">
+            <!-- Цены на товар (с учетом скидки и без)-->
+            <div class="card__prices">
+                <div class="card__price card__price--discount">{{card.price}}</div>
+            </div>
+            <div class="card__note">
+                <p class="card__note">{{card.note}}</p>
+            </div>
+            <!-- Ссылка-название товара -->
+            <a href="{% url 'card' card.slug %}" class="card__title">
+                {{card.name}} - {{card.num}}
+            </a>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

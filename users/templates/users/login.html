@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<form method="POST">
+    <h1>Вход в систему</h1>
+    {% csrf_token %}
+    <div class="mb-3">
+        <input type="hidden" name="text" value="{{ next }}">
+        <div>{{ form.non_field_error }}</div>
+        {% for f in form %}
+        <p><label for="{{ f.id_for_label }}">{{ f.label }}</label>{{f}}</p>
+        <div>{{ f.errors }}</div>
+
+        {% endfor %}
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <hr>
+    <p><a href="{% url 'users:password_reset' %}">Забыли пароль?</a></p>
+</form>
+
+
+{% endblock %}

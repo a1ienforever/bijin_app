@@ -1,0 +1,72 @@
+.container {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+    flex-direction: column;
+}
+
+.container_card h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            word-wrap: break-word;
+        }
+
+        /* Стили для изображения */
+        .container_card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Стили для подзаголовков */
+        .container_card h2 {
+            font-size: 18px;
+            color: #555;
+            margin: 10px 0;
+            word-wrap: break-word;
+        }
+
+        /* Специальные стили для цены */
+        .container_card .price {
+            font-size: 20px;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        /* Стили для текста описания */
+        .container_card p {
+            font-size: 16px;
+            color: #777;
+            line-height: 1.5;
+            margin-top: auto; /* Описание находится внизу контейнера */
+            word-wrap: break-word;
+        }
+
+        /* Медиа-запрос для адаптации на мобильных устройствах */
+        @media (max-width: 480px) {
+            .container_card {
+                height: auto;
+                padding: 12px;
+            }
+
+            .container_card h1 {
+                font-size: 20px;
+            }
+
+            .container_card h2, .container .price {
+                font-size: 16px;
+            }
+
+            .container_card p {
+                font-size: 14px;
+            }
+        }

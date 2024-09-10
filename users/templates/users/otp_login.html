@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Подтверждение входа</h2>
+<p>Пожалуйста, введите одноразовый код из приложения-аутентификатора для завершения входа.</p>
+
+<form method="post">
+    {% csrf_token %}
+    <label for="token">Введите одноразовый код:</label>
+    <input type="text" name="token" id="token" required>
+    <button type="submit">Подтвердить</button>
+    {% if error %}
+        <p style="color:red">{{ error }}</p>
+    {% endif %}
+</form>
+
+{% endblock %}

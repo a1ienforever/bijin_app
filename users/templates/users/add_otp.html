@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if otp_enabled %}
+    <p>Двухфакторная аутентификация уже включена.</p>
+{% else %}
+    <p>Сканируйте этот QR-код с помощью вашего приложения-аутентификатора (например, Google Authenticator) для настройки двухфакторной аутентификации.</p>
+    <img src="data:image/png;base64,{{ qr_code|safe }}" alt="QR Code">
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="token">Введите одноразовый код из приложения-аутентификатора:</label>
+        <input type="text" name="token" id="token" required>
+        <button type="submit">Подтвердить</button>
+        {% if error %}
+            <p style="color:red">{{ error }}</p>
+        {% endif %}
+    </form>
+{% endif %}
+
+{% endblock %}

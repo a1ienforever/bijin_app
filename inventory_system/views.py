@@ -1,14 +1,10 @@
-from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView
 
 from .models import CardsList, Card
 
 name_th = ["Модель", "Название", "Кол-во", "Цена"]
-
-
 
 
 class BijinHome(ListView):
@@ -26,7 +22,6 @@ def date_filter(request):
 
 
 class CreateCard(CreateView):
-
     model = Card
     fields = ["num", "name", "price", "note", "photo"]
     template_name = "inventory_system/newcard.html"
